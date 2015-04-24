@@ -12,6 +12,10 @@ module Main
       _todos.count { |t| !t._completed }
     end
 
+    def complete_all
+      _todos.each { |t| t._completed = true }
+    end
+
     private
 
     # The main template contains a #template binding that shows another
