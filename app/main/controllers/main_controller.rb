@@ -5,6 +5,7 @@ module Main
 
     def add_todo
       _todos << page._new_todo.to_h
+      page._new_todo._label = ''
     end
 
     private
