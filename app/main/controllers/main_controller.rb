@@ -4,28 +4,32 @@ module Main
     model :store
 
     def add_todo
-      _todos << page._new_todo.to_h
-      page._new_todo._label = ''
-    end
-
-    def incomplete
-      _todos.count { |t| !t._completed }
+      _todos << { name: _new_todo }
+      _new_todo = ''
     end
 
     def complete_all
-      _todos.each { |t| t._completed = true }
+      _todos.each { |todo| todo._completed = true }
+    end
+
+    def completed
+      _todos.count(&:_completed)
+    end
+
+    def incomplete
+      _todos.size - completed
+    end
+
+    def percent_complete
+      (completed / _todos.size.to_f * 100).round
     end
 
     def clear_completed
       _todos.select(&:_completed).each(&:destroy)
     end
 
-    def current_index
-      params._index.to_i
-    end
-
     def current_todo
-      _todos[current_index]
+     _todos[(params._index || 0).to_i]
     end
 
     private
