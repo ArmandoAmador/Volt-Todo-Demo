@@ -20,6 +20,10 @@ module Main
       _todos.select { |t| t._completed }.each(&:destroy)
     end
 
+    def current_index
+      params._index.to_i
+    end
+
     private
 
     # The main template contains a #template binding that shows another

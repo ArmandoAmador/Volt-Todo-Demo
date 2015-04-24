@@ -7,8 +7,10 @@
   <button e-click="complete_all">Complete {{ incomplete }} Tasks</button>
   <button e-click="clear_completed">Clear Completed</button>
   <table class="table">
-    {{ _todos.each do |todo| }}
-      <tr>
+    {{ _todos.each_with_index do |todo, index| }}
+      <tr
+      e-click="params._index = index"
+      class="{{ if current_index == index }}selected{{ end }}">
         <td><input type="checkbox" checked="{{ todo._completed }}"></td>
         <td class="{{ if todo._completed }}complete{{ end }}">{{ todo._label }}</td>
         <td><button e-click="todo.destroy">X</button></td>
