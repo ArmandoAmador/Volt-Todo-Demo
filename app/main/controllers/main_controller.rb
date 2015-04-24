@@ -1,7 +1,7 @@
 # By default Volt generates this controller for your Main component
 module Main
   class MainController < Volt::ModelController
-    model :page
+    model :store
 
     def add_todo
       _todos << page._new_todo.to_h
@@ -17,7 +17,7 @@ module Main
     end
 
     def clear_completed
-      _todos.select { |t| t._completed }.each(&:destroy)
+      _todos.select(&:_completed).each(&:destroy)
     end
 
     def current_index
