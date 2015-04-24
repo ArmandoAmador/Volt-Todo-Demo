@@ -5,6 +5,7 @@
   <h1>{{ _todos.size }} Todos</h1>
 
   <button e-click="complete_all">Complete {{ incomplete }} Tasks</button>
+  <button e-click="clear_completed">Clear Completed</button>
   <table class="table">
     {{ _todos.each do |todo| }}
       <tr>

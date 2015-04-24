@@ -16,6 +16,10 @@ module Main
       _todos.each { |t| t._completed = true }
     end
 
+    def clear_completed
+      _todos.select { |t| t._completed }.each(&:destroy)
+    end
+
     private
 
     # The main template contains a #template binding that shows another
