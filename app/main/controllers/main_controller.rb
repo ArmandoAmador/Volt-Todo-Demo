@@ -24,6 +24,10 @@ module Main
       params._index.to_i
     end
 
+    def current_todo
+      _todos[current_index]
+    end
+
     private
 
     # The main template contains a #template binding that shows another

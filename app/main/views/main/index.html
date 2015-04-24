@@ -22,3 +22,9 @@
     <input value="{{ page._new_todo!._label }}" />
   </form>
 
+  <hr />
+
+  {{ if current_todo }}
+    <h1>{{ current_todo._label }}</h1>
+    <textarea>{{ current_todo._description }}</textarea>
+  {{ end }}
