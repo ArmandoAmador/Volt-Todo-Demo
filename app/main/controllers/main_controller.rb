@@ -8,6 +8,10 @@ module Main
       page._new_todo._label = ''
     end
 
+    def incomplete
+      _todos.count { |t| !t._completed }
+    end
+
     private
 
     # The main template contains a #template binding that shows another

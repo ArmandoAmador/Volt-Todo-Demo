@@ -4,6 +4,7 @@
 <:Body>
   <h1>{{ _todos.size }} Todos</h1>
 
+  <button>Complete {{ incomplete }} Tasks</button>
   <table class="table">
     {{ _todos.each do |todo| }}
       <tr>
