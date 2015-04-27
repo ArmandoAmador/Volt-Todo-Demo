@@ -3,12 +3,13 @@
 
 <:Body>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
 
       <h1>{{ _todos.size }} Todo List</h1>
-
-      <button e-click="complete_all">Complete {{ incomplete }} Tasks</button>
-      <button e-click="clear_completed">Clear Completed</button>
+      <div class="btn-group" role="group">
+        <button class="btn btn-default" e-click="complete_all">Complete {{ incomplete }} Tasks</button>
+        <button class="btn btn-default" e-click="clear_completed">Clear Completed</button>
+      </div>
 
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: {{ percent_complete }}%;">
